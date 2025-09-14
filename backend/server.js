@@ -8,7 +8,7 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://dsa-tracker-nine-tau.vercel.app/',
   credentials: true,
   optionsSuccessStatus: 200
 }));
@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dsa-sheet', {
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://varunkumararya832:TJxSVhSAbCi9NrTn@cluster0.ewryn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
@@ -48,12 +48,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ msg: 'Something went wrong!' });
 });
 
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📝 API endpoints:`);
-  console.log(`   - POST http://localhost:${PORT}/api/auth/register`);
-  console.log(`   - POST http://localhost:${PORT}/api/auth/login`);
-  console.log(`   - GET  http://localhost:${PORT}/api/progress`);
-});
+// app.listen(PORT, () => {
+//   console.log(`🚀 Server running on http://localhost:${PORT}`);
+//   console.log(`📝 API endpoints:`);
+//   console.log(`   - POST http://localhost:${PORT}/api/auth/register`);
+//   console.log(`   - POST http://localhost:${PORT}/api/auth/login`);
+//   console.log(`   - GET  http://localhost:${PORT}/api/progress`);
+// });
+
+module.exports = app;

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/dsa-sheet', {
+    await mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://varunkumararya832:TJxSVhSAbCi9NrTn@cluster0.ewryn.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
