@@ -13,7 +13,7 @@ function Login({ onLogin }) {
     
     try {
       const endpoint = isLogin ? '/api/auth/login' : '/api/auth/register';
-      const response = await axios.post(`http://localhost:5001${endpoint}`, {
+      const response = await axios.post(`https://backend-psi-black-59.vercel.app${endpoint}`, {
         username,
         password
       });

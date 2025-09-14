@@ -14,7 +14,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "http://localhost:5001",
+  "proxy": "https://backend-psi-black-59.vercel.app",
   "browserslist": {
     "production": [
       ">0.2%",

@@ -14,7 +14,7 @@ function Dashboard({ token, username, onLogout }) {
 
   const fetchProgress = async () => {
     try {
-      const response = await axios.get('http://localhost:5001/api/progress', {
+      const response = await axios.get('https://backend-psi-black-59.vercel.app/api/progress', {
         headers: { 'x-auth-token': token }
       });
       
@@ -31,7 +31,7 @@ function Dashboard({ token, username, onLogout }) {
   const updateProgress = async (problemId, completed) => {
     try {
       await axios.post(
-        `http://localhost:5001/api/progress/${problemId}`,
+        `https://backend-psi-black-59.vercel.app/api/progress/${problemId}`,
         { completed },
         { headers: { 'x-auth-token': token } }
       );
