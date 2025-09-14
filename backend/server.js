@@ -8,10 +8,9 @@ dotenv.config();
 const app = express();
 
 app.use(cors({
-  origin: 'https://dsa-tracker-nine-tau.vercel.app/',
-  credentials: true,
-  optionsSuccessStatus: 200
+  origin: '*'
 }));
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
